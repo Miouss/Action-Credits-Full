@@ -15,8 +15,9 @@ Pour lancer ces processus, j'ai utilisé PM2.
 ## Représentation des données
 
 En ce qui concerne la représentation des données, j'ai adopté une approche très simple, avec un utilisateur unique. 
-Pour les actions, j'ai utilisé un tableau d'objets contenant le nom des actions et leur nombre de crédits. 
-Pour les tâches à exécuter, j'ai utilisé un objet avec deux clés, "pending" et "executed", représentant chacune un ensemble de noms d'actions.
+
+1. Pour les actions, j'ai utilisé un tableau d'objets contenant le nom des actions et leur nombre de crédits. 
+2. Pour les tâches à exécuter, j'ai utilisé un objet avec deux clés, "pending" et "executed", représentant chacune un ensemble de noms d'actions.
 
 Dans le cadre de cet exercice, j'ai opté pour l'utilisation de fichiers pour la persistance des données.
 
