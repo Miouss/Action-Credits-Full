@@ -3,9 +3,9 @@
 J'ai opté pour une architecture à 2 processus :
 
 1. **Le serveur Web** pour la communication avec le Front-End.
-2. **Un worker** pour gérer l'exécution des tâches et le rafraîchissement des crédits.
+2. **Un worker** pour gérer l'exécution des actions et le rafraîchissement des crédits.
 
-L'exécution des tâches de différents utilisateurs peut consommer beaucoup de ressources. De plus, cette partie de l'application est indépendante de l'API.<br/><br/>Donc, séparer ces processus est préférable pour ne pas impacter les performances du serveur Web.
+L'exécution des actions de différents utilisateurs peut consommer beaucoup de ressources. De plus, cette partie de l'application est indépendante de l'API.<br/><br/>Donc, séparer ces processus est préférable pour ne pas impacter les performances du serveur Web.
 
 Pour lancer ces processus, j'ai utilisé PM2.
 
@@ -16,7 +16,7 @@ Pour lancer ces processus, j'ai utilisé PM2.
 En ce qui concerne la représentation des données, j'ai adopté une approche très simple, avec un utilisateur unique. 
 
 1. Pour les actions, j'ai utilisé un tableau d'objets contenant le nom des actions et leur nombre de crédits. 
-2. Pour les tâches à exécuter, j'ai utilisé un objet avec deux clés, "pending" et "executed", représentant chacune un ensemble de noms d'actions.
+2. Pour les actions à exécuter, j'ai utilisé un objet avec deux clés, "pending" et "executed", représentant chacune un ensemble de noms d'actions.
 
 Dans le cadre de cet exercice, j'ai opté pour l'utilisation de fichiers pour la persistance des données.
 
