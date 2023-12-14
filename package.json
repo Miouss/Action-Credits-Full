@@ -1,0 +1,11 @@
+{
+  "name": "rendu-waalaxy",
+  "scripts": {
+    "start": "concurrently \"npm --prefix ./server run start\" \"npm --prefix ./client run start\"",
+    "test": "npm --prefix ./server run test",
+    "kill": "npm --prefix ./server run kill"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
