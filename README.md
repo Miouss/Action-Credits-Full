@@ -5,8 +5,7 @@ J'ai opté pour une architecture à 2 processus :
 1. **Le serveur Web** pour la communication avec le Front-End.
 2. **Un worker** pour gérer l'exécution des tâches et le rafraîchissement des crédits.
 
-L'exécution des tâches de différents utilisateurs peut consommer beaucoup de ressources. De plus, cette partie de l'application est indépendante de l'API.
-Donc, séparer ces processus est préférable pour ne pas impacter les performances du serveur Web.
+L'exécution des tâches de différents utilisateurs peut consommer beaucoup de ressources. De plus, cette partie de l'application est indépendante de l'API.<br/><br/>Donc, séparer ces processus est préférable pour ne pas impacter les performances du serveur Web.
 
 Pour lancer ces processus, j'ai utilisé PM2.
 
@@ -39,5 +38,5 @@ Pour l'API, j'ai suivi le modèle de données que j'ai implémenté, à savoir a
 
 - `GET /actions` pour récupérer les actions avec les crédits.
 - `GET /config` pour récupérer l'intervalle d'exécution des actions et celui du rafraîchissement des crédits.
-- `GET /queue` pour récupérer les actions en attente et/ou éxécutées. J'ai ajouté des paramètres de filtrage pour éviter de récupérer toutes les tâches en permanence, ce qui pourrait impacter les performances du serveur dans une application réelle en production.
-- `PATCH /queue` pour ajouter une tâche à la file d'attente.
+- `GET /queue` pour récupérer les actions en attente et/ou éxécutées. J'ai ajouté des paramètres de filtrage pour éviter de récupérer toutes les actions en permanence, ce qui pourrait impacter les performances du serveur dans une application réelle en production.
+- `PATCH /queue` pour ajouter une action à la file d'attente.
