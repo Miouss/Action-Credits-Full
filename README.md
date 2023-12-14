@@ -20,7 +20,7 @@ Pour les tâches à exécuter, j'ai utilisé un objet avec deux clés, "pending"
 
 Dans le cadre de cet exercice, j'ai opté pour l'utilisation de fichiers pour la persistance des données.
 
-J'ai veillé à ce que la couche de données soit extensible (voir `IDataProvider` et `DataProviderFactory`) afin de démontrer qu'il est facile de changer la source de données sans modifier le reste de l'application.
+J'ai veillé à ce que la data layer soit extensible (voir `IDataProvider` et `DataProviderFactory`) afin de démontrer qu'il est facile de changer la source de données sans modifier le reste de l'application.
 
 Par exemple, dans le cas d'une base de données NoSQL, la représentation pourrait être similaire à celle que j'ai utilisée :
 
@@ -38,5 +38,5 @@ Pour l'API, j'ai suivi le modèle de données que j'ai implémenté, à savoir a
 
 - `GET /actions` pour récupérer les actions avec les crédits.
 - `GET /config` pour récupérer l'intervalle d'exécution des actions et celui du rafraîchissement des crédits.
-- `GET /queue` pour récupérer les actions en attente ou éxécutées. J'ai ajouté des paramètres de filtrage pour éviter de récupérer toutes les tâches en permanence, ce qui pourrait impacter les performances du serveur dans une application réelle en production.
+- `GET /queue` pour récupérer les actions en attente et/ou éxécutées. J'ai ajouté des paramètres de filtrage pour éviter de récupérer toutes les tâches en permanence, ce qui pourrait impacter les performances du serveur dans une application réelle en production.
 - `PATCH /queue` pour ajouter une tâche à la file d'attente.
